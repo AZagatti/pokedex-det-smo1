@@ -48,7 +48,8 @@ jobs:
         run: npm run build
 
       - name: Check PokeAPI reachability
-        run: curl -s -o /dev/null -w "PokeAPI status: %{http_code} in %{time_total}s\n" https://pokeapi.co/api/v2/pokemon/1
+        run: |
+          curl -s -o /dev/null -w 'PokeAPI status: %{http_code} in %{time_total}s\n' https://pokeapi.co/api/v2/pokemon/1
 
       - name: E2E tests
         run: npx playwright test
