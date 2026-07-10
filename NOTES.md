@@ -1,0 +1,1 @@
+[trimwire: wrote /home/azagatti/Projects/pokedex-trimwire-test/det_rsmo1/NOTES.md (3283B) — read the file to restore]
