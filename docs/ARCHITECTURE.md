@@ -1,0 +1,1 @@
+[trimwire: wrote /home/azagatti/Projects/pokedex-trimwire-test/det_rsmo1/docs/ARCHITECTURE.md (3054B) — read the file to restore]

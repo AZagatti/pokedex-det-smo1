@@ -76,6 +76,8 @@
 		}
 	}
 
+	let initialized = $state(false);
+
 	async function loadInitial() {
 		loading = true;
 		errorMsg = '';
@@ -87,6 +89,7 @@
 			errorMsg = error instanceof Error ? error.message : 'Failed to load Pokédex.';
 		} finally {
 			loading = false;
+			initialized = true;
 		}
 	}
 
@@ -149,7 +152,7 @@
 	$effect(() => {
 		void debouncedQuery;
 		void selectedGen;
-		if (!loading) {resetAndReload();}
+		if (initialized) {resetAndReload();}
 	});
 
 	$effect(() => {
