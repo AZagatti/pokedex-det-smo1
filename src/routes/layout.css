@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #f4f5fb;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef0fa;
+  --color-text: #1c1d2b;
+  --color-text-muted: #62647a;
+  --color-border: #e1e3f0;
+  --color-surface-hover: #e6e8f7;
+  --color-accent: #ef4a5c;
+  --color-accent-2: #3d7dfc;
+  --shadow-card:
+    0 1px 2px rgba(28, 29, 43, 0.06), 0 8px 24px rgba(28, 29, 43, 0.08);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #14151f;
+  --color-surface: #1c1e2c;
+  --color-surface-2: #242637;
+  --color-text: #f2f2f8;
+  --color-text-muted: #a2a4bd;
+  --color-border: #2f3146;
+  --color-surface-hover: #2c2e42;
+  --color-accent: #ff6b7a;
+  --color-accent-2: #5b93ff;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-2) 25%,
+    var(--color-border) 37%,
+    var(--color-surface-2) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.stat-bar-fill {
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
